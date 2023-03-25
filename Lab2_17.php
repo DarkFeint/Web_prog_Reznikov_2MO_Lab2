@@ -1,77 +1,89 @@
 <?php
-$array__arrays = array();
-$d = 10;
-for($i = 0; $i < 10; $i++)
+$mas_1 = array();
+
+for($i = 0; $i < 5; $i++)
 {
-    $array__arrays[$i] = "";
-    for($j = 0; $j < $i+1; $j++)
-    {
-        $array__arrays[$i] .= "x";
-    }
+    $mas_1[$i] = str_repeat("x", $i + 1);
 }
-for($i = 0; $i < count($array__arrays); $i++)
-    echo $array__arrays[$i] . "\n";
 
+print_r($mas_1);
 
-function arrayFill($a, $b = 5)
+echo "\n";
+
+function arrayFill($elem, $count)
 {
-    $arr = array();
-    for($i = 0; $i < $b; $i++)
+    $mas = array();
+
+    if ($count > 0)
     {
-        $arr[$i] = "";
-        $arr[$i] .= $a;
+        for($i = 0; $i < $count; $i++)
+        {
+            $arr[$i] = $elem;
+        }
     }
-    return $arr;
+
+    return $mas;
 }
-$arr1 = arrayFill('x',5);
-for($i = 0; $i < count($arr1); $i++)
-    echo $arr1[$i] . "\n";
+$mas_2 = arrayFill('x',5);
 
+print_r($mas_2);
 
-$array_functions_2 = [[1, 2, 3], [4, 5], [6]];
+echo "\n";
+
+$mas_3 = [[1, 2, 3], [4, 5], [6]];
+
 $sum = 0;
-for($i = 0; $i < count($array_functions_2); $i++)
+
+for($i = 0; $i < count($mas_3); $i++)
 {
-    $sum += array_sum($array_functions_2[$i]);
+    $sum += array_sum($mas_3[$i]);
 }
+
 echo $sum . "\n";
 
+$mas_4 = array();
 
-$arr2 = array();
-$count1 = 0;
+$el = 0;
+
 for($i = 0; $i < 3; $i++)
 {
-    $arr2_help = array();
+    $row = array();
     for($j = 0; $j < 3; $j++)
     {
-        $arr2_help[$j] = ++$count1;
-        echo $arr2_help[$j] . "\n";
+        $row[$j] = $i * 3 + $j + 1;
     }
-    $arr2[$i] = $arr2_help;
+    $mas_4[$i] = $row;
 }
 
+print_r($mas_4);
 
-$arr3 = [2,5,3,9];
-$result = $arr3[0] * $arr3[1] + $arr3[2] * $arr3[3];
+echo "\n";
+
+$mas_5 = [2,5,3,9];
+
+$result = $mas_5[0] * $mas_5[1] + $mas_5[2] * $mas_5[3];
+
 echo $result . "\n";
 
 
 $user = array(
-    'name' => 'Ivan', 
-    'surname' => 'Ivanov', 
-    'patronymic' => 'Ivanovich');
+    'name' => 'Hugh', 
+    'surname' => 'Mungus', 
+    'patronymic' => '-');
+
 echo $user['surname'], " ", $user['name'], " ", $user['patronymic'], "\n", "\n";
 
 
 $date =array (
     'year' => '2023', 
-    'month'=>'3' , 
-    'day'=>'19');
+    'month'=>'03' , 
+    'day'=>'24');
 echo $date['year'],'-',$date['month'], "-",$date['day'], "\n", "\n";
 
 
-$arr4 = ['a', 'b', 'c', 'd', 'e'];
-echo count($arr4) . "\n";
+$arr = ['a', 'b', 'c', 'd', 'e'];
 
-echo end($arr4), " ",prev($arr4);
+echo count($arr) . "\n";
+
+echo end($arr), " ",prev($arr4);
 ?>

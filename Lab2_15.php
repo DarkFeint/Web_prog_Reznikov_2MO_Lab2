@@ -1,9 +1,11 @@
 <?php
 function printStringReturnNumber()
 {
-    echo "Возвращаемое значение: ";
-    return rand();
+    echo "А вот и число: ";
+    return 7;
 }
-$my_num = printStringReturnNumber();
-echo $my_num;
+
+$fig = printStringReturnNumber();
+
+echo $fig;
 ?>

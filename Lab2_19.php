@@ -1,10 +1,8 @@
 <?php
-$c = 'x';
-$r = 1;
-while ($r<=20)
+
+for ($i = 0; $i < 20; $i++)
 {
-  echo $c, "\n";
-  $c = $c.'x';
-  $r +=1;
+  echo str_repeat("x", $i + 1);
 }
+
 ?>

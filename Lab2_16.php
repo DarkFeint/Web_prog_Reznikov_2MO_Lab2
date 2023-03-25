@@ -1,55 +1,74 @@
 <?php
-function increaseEnthusiasm($a)
+function increaseEnthusiasm($string)
 {
-    return $a .= "!";
+    return $string .= "!";
 }
-$b = "I'm Matob";
-echo increaseEnthusiasm($b);
 
-function repeatThreeTimes($a)
+$st = "Hello, world";
+
+echo increaseEnthusiasm($st);
+
+echo "\n";
+
+function repeatThreeTimes($string)
 {
-    $j = $a;
-    for($i = 0; $i < 2; $i++)
-        $j .= $a;
-    return $j;
+    return str_repeat($string, 3);
 }
-echo "\n";
-echo repeatThreeTimes($b);
-echo "\n";
-echo repeatThreeTimes(increaseEnthusiasm($b));
 
-function cut($a, $d = 10)
+echo repeatThreeTimes($st);
+
+echo "\n";
+
+echo increaseEnthusiasm(repeatThreeTimes($st));
+
+echo "\n";
+
+function cut($string, $symbols = 10)
 {
-    $j = "";
-    for($i = 0; $i < $d; $i++)
-        $j .= $a[$i];
-    return $j;
+    
+    return substr($string, 0, $symbols);
+
 }
+
+echo cut($st, 10);
+
 echo "\n";
-echo cut(repeatThreeTimes($b), 15);
 
-/*
-$array_functions = array(1,2,3,4,5,6,7,8,9,10);
-function recursiveOutput($a)
+function Recursion($mas)
 {
-    echo $a[0]."\n";
-    array_slice($a, 0, 1);
-    if(count($a) > 0)
-        return recursiveOutput($a);
-} 
-recursiveOutput($array_functions); */
+    echo array_shift($mas);
 
-$number_functions = 37;
-function sumNum($a)
+    echo "\n";
+
+    if (count($mas) > 0)
+    {
+        return Recursion($mas);
+    }
+}
+
+$mas = array(1,2,3,4,5,6,7,8,9,10);
+
+Recursion($mas);
+
+
+$num = 483;
+function Sum_of_Numbers($num)
 {
-    $arr = str_split($a, 1);
-    $result = array_sum($arr);
-    if($result > 9)
-        return sumNum($result);
+    $mas = str_split($num, 1);
+
+    $sum = array_sum($mas);
+
+    if($sum > 9)
+    {
+        return Sum_of_Numbers($sum);
+    }
     else
-        return $result;
+    {
+        return $sum;
+    }
 }
 
 echo "\n";
-echo sumNum($number_functions);
+
+echo Sum_of_Numbers($num);
 ?>
